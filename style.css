@@ -102,11 +102,6 @@ body{
     animation-duration: 3s;
     animation-fill-mode: forwards;
 }
-.overlay.close{
-    animation-name: overlayClose;
-    animation-duration: 1s;
-    animation-fill-mode: backwards;
-}
 @keyframes overlayOpen {
     0%{
         opacity: 1;
@@ -118,6 +113,13 @@ body{
         opacity: 0;
     }
 }
+
+.overlay.close{
+    animation-name: overlayClose;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
 @keyframes overlayClose {
     0%{
         opacity: 0;

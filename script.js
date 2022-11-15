@@ -8,6 +8,8 @@ let isOpened = false;
 var player;
 var list="5mL-OkdM7Tc,ntmPIzlkcJk,9Auq9mYxFEE,F-POY4Q0QSI,h3MuIUNCCzI";
 
+overlay.classList.add("close");
+
 // iFrame Api Codes
 function onYouTubeIframeAPIReady() {
     player = new YT.Player("video-placeholder", {
@@ -32,7 +34,7 @@ spans.forEach((element) => {
             brand.classList.remove("close");
             overlay.classList.remove("close");
             receiverLed.classList.add("active")
-          isOpened = true;
+            isOpened = true;
         } else {
           brand.classList.remove("open");
           brand.classList.add("close");
