@@ -6,7 +6,8 @@ const receiverLed = document.getElementById("receiverLed");
 const brand = document.getElementById("brand");
 let isOpened = false;
 var player;
-var list="ntmPIzlkcJk,9Auq9mYxFEE,F-POY4Q0QSI,h3MuIUNCCzI,5mL-OkdM7Tc";
+var list="5mL-OkdM7Tc,ntmPIzlkcJk,9Auq9mYxFEE,F-POY4Q0QSI,h3MuIUNCCzI";
+
 // iFrame Api Codes
 function onYouTubeIframeAPIReady() {
     player = new YT.Player("video-placeholder", {
@@ -19,6 +20,7 @@ function onYouTubeIframeAPIReady() {
     });
     
 }
+
   // Add to spans event listener
 spans.forEach((element) => {
   element.addEventListener("click", function () {
