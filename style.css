@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    height: 100vh;
+}
+
+.tv-container{
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+
+    
+}
+.outer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 36, 36);
+    padding: 10px;
+    padding-bottom: 0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: -100px 100px 150px rgba(255, 255, 0, 0.313), 
+                100px 100px 150px rgba(255, 0, 0, 0.453),
+                100px -100px 150px rgba(61, 84, 255, 0.453),
+                -100px -100px 150px rgba(255, 255, 0, 0.485),
+                inset -2px -2px 5px rgba(182, 12, 12, 0.748),
+                inset 2px 2px 5px rgba(255, 255, 0, 0.485),
+                inset 0px -2px 5px rgba(158, 158, 158, 0.748);
+}
+.inner{
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+
+    box-shadow: 2px 2px 5px rgba(158, 158, 158, 0.748);
+}
+
+.inner iframe{
+    width: 100%;
+    height:100%;
+}
+.brand-name{
+    color: gray;
+    font-size: 14px;
+    text-align: center;
+    width: 100px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.receiver{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+}
+.receiver span{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+    box-shadow: 2px 2px 5px yellowgreen, -2px -2px 5px yellowgreen, 2px -2px 5px yellowgreen, 2px -2px 15px yellowgreen, -2px -2px 15px yellowgreen;
+}
+.receiver span.active{
+    background-color: red;
+    box-shadow: 2px 2px 5px red, -2px -2px 5px red, 2px -2px 5px red, 2px -2px 15px red, -2px -2px 15px red;
+
+}
+
+.open{
+    color: red;
+    grid-area: open;
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: overlayOpen;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+.overlay.close{
+    animation-name: overlayClose;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+@keyframes overlayOpen {
+    0%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes overlayClose {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+.overlay #brand{
+    font-size: 50px;
+    color: gray;
+    opacity: 0;
+}
+.overlay #brand.open{
+    animation-name: open;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes open {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.overlay #brand.close{
+    animation-name: close;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes close {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
+.remote-control{
+    width: 120px;
+    height: 200px;
+    background: black;
+    box-shadow: 0 0 5px gray;
+    color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: inset -3px -1px 10px gray,inset -1px -2px 10px gray,inset 0px 0px 10px red;
+    
+}
+.remote-control span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.685);
+    box-shadow:inset 1px 1px 2px gray;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.remote-control span:hover{
+    background-color: gray;
+    color: black;
+    border-color: black;
+}
+.keys{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+
+.dev-profile{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 2px solid brown;
+    box-shadow: 0 0 50px white;
+}
+/* RESPONSIVE UI*/
+
+@media screen and (min-width:400px){
+    .tv-container{
+        min-height: 300px;
+    }
+    .outer{
+        padding: 20px;
+        padding-bottom: 0;
+    }
+}
+@media screen and (min-width:500px){
+    .tv-container{
+        min-height: 350px;
+    }
+
+    .outer{
+        padding: 20px;
+        padding-bottom: 0;
+
+    }
+}
+@media screen and (min-width:600px){
+    .tv-container{
+        min-height: 380px;
+    }
+    .outer{
+        padding: 20px;
+        padding-bottom: 0;
+
+    }
+}
