@@ -6,7 +6,7 @@ const receiverLed = document.getElementById("receiverLed");
 const brand = document.getElementById("brand");
 let isOpened = false;
 var player;
-var list="5mL-OkdM7Tc,ntmPIzlkcJk,9Auq9mYxFEE,F-POY4Q0QSI,h3MuIUNCCzI";
+var list="jS4aFq5-91M,w7ejDZ8SWv8";
 
 overlay.classList.add("close");
 
